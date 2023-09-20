@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url(/assets/Poppins-Regular-6eb324da275c57ad131f532ed97148c45b7a8fc7efddfbeae608c4e4b24b364e.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url(/assets/Poppins-Light-327073253845d26072dcf8663cb077235241407c4c9c491c2759a48b33b458ab.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url(/assets/Poppins-Medium-0c5f41475616260f19e95f34c0bed1945afb5e6821ce5f3cba331f8e51fb50a0.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url(/assets/Poppins-Bold-19df3a425dd6f1ffaa1765b4f76ad5ad4701d73e24c5abfa0c0e50ba139e670d.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Poppins-ExtraLight';
+  src: url(/assets/Poppins-ExtraLight-002dc8680b2b83ae2df9571e7d7bcb29ceeb3f0c1b798409bc6ca10efedd1a29.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'Poppins-ExtraBold';
+  src: url(/assets/Poppins-ExtraBold-8951b6d7528b2985da89ee1c5c97d9f7bc2fec49d7b29e7e88e5c10e4d093f1f.ttf) format("truetype");
+}
+/* line 48, /home/ubuntu/Ruby_rails_app/app/assets/stylesheets/application.scss */
+html, body {
+  font-family: 'Poppins-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 0;
+  margin: 0 15px;
+}
+
+/* line 54, /home/ubuntu/Ruby_rails_app/app/assets/stylesheets/application.scss */
+textarea, select, input, button {
+  outline: none;
+}
+
+/* line 58, /home/ubuntu/Ruby_rails_app/app/assets/stylesheets/application.scss */
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}

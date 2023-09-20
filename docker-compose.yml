@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: db
+      DB_USER: ubuntu
+      DB_PASSWORD: pass@123
+      DB_NAME: ruby_db
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ruby_db
+      POSTGRES_USER: ubuntu
+      POSTGRES_PASSWORD: pass@123
