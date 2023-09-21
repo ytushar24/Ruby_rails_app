@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ruby-app
+spec:
+  containers:
+  - name: ruby-app
+    image: ytushar24/openflights_rubyrails_app:v1
+    ports:
+    - containerPort: 3000

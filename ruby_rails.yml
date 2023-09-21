@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ruby-app
+  labels:
+    app: ruby-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ruby-app
+  template:
+    metadata:
+      labels:
+        app: ruby-app
+    spec:
+      containers:
+        - name: ruby-app
+          image: ytushar24/openflights_rubyrails_app:v1
+          env:
+            - name: DB_HOST
+              value: db
+            - name: DB_USER
+              value: ubuntu
+            - name: DB_PASSWORD
+              value: pass@123
+            - name: DB_NAME
+              value: ruby_db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ruby-app
+spec:
+  selector:
+    app: ruby-app
+  ports:
+    - protocol: TCP
+      port: 3000      
+      targetPort: 3000
+      nodePort: 32163
+  type: NodePort

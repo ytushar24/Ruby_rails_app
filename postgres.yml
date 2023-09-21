@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postdb
+  template:
+    metadata:
+      labels:
+        app: postdb
+    spec:
+      containers:
+        - name: postdb
+          image: postgres:latest
+          env:
+            - name: POSTGRES_DB
+              value: ruby_db
+            - name: POSTGRES_USER
+              value: ubuntu
+            - name: POSTGRES_PASSWORD
+              value: pass@123
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+spec:
+  selector:
+    app: postdb
+  ports:
+    - protocol: TCP
+      port: 5432
