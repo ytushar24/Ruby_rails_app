@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ruby-app-ingress
+  namespace: project
+spec:
+  rules:
+    - host: "domain.com"
+      http:
+        paths:
+          - path: "/app"
+            pathType: Prefix
+            backend:
+              service:
+                name: ruby-app
+                port:
+                  number: 3000
+    - host: "*.domain.com"
+      http: 
+        paths:
+        - pathType: Prefix
+          path: "/app"
+          backend:
+            service:
+              name: ruby-app
+              port: 
+                number: 3000 
+

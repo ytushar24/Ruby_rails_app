@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: post-vol
+  namespace: project
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 2Gi  
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce  
+  hostPath:
+    path: /mnt/data 
+
