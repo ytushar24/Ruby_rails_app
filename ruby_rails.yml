@@ -18,15 +18,9 @@ spec:
       containers:
         - name: ruby-app
           image: ytushar24/openflights_rubyrails_app:v1
-          env:
-            - name: DB_HOST
-              value: db
-            - name: DB_USER
-              value: ubuntu
-            - name: DB_PASSWORD
-              value: pass@123
-            - name: DB_NAME
-              value: ruby_db
+          envFrom:
+            - configMapRef:
+                name: db-config
 ---
 apiVersion: v1
 kind: Service
