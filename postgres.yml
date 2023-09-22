@@ -23,15 +23,12 @@ spec:
               value: ubuntu
             - name: POSTGRES_PASSWORD
               value: pass@123
-          ports:
-            - name: postdb
-              containerPort: 5432
-              protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: db
+  namespace: project
 spec:
   selector:
     app: postdb
