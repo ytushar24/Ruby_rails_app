@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ruby-app
+  namespace: project
   labels:
     app: ruby-app
 spec:
@@ -26,6 +27,8 @@ spec:
               value: pass@123
             - name: DB_NAME
               value: ruby_db
+          ports:
+        - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
